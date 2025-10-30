@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometriaClientRestAPIDesktop", "GeometriaClientRestAPIDesktop\GeometriaClientRestAPIDesktop.csproj", "{ABE33403-8108-46A4-88A3-A275462B7B40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometriaRestAPIWeb", "GeometriaRestAPIWeb\GeometriaRestAPIWeb.csproj", "{FA271BB4-ED07-4E41-B236-B99E1B885874}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABE33403-8108-46A4-88A3-A275462B7B40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE33403-8108-46A4-88A3-A275462B7B40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE33403-8108-46A4-88A3-A275462B7B40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE33403-8108-46A4-88A3-A275462B7B40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA271BB4-ED07-4E41-B236-B99E1B885874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA271BB4-ED07-4E41-B236-B99E1B885874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA271BB4-ED07-4E41-B236-B99E1B885874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA271BB4-ED07-4E41-B236-B99E1B885874}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
