@@ -8,5 +8,9 @@
         public double Ancho { get; set; }
         public double Radio { get; set; }
         public double Area { get; set; }
+        public override string ToString()
+        {
+            return $"Id: {Id}, Area: {Area}, Ancho: {Ancho}, Largo: {Largo}, Radio: {Radio}";
+        }
     }
 }

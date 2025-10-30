@@ -28,12 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnConsulta = new Button();
+            lsbConsultas = new ListBox();
+            SuspendLayout();
+            // 
+            // btnConsulta
+            // 
+            btnConsulta.Location = new Point(588, 207);
+            btnConsulta.Name = "btnConsulta";
+            btnConsulta.Size = new Size(180, 59);
+            btnConsulta.TabIndex = 0;
+            btnConsulta.Text = "Consulta";
+            btnConsulta.UseVisualStyleBackColor = true;
+            btnConsulta.Click += btnConsulta_Click;
+            // 
+            // lsbConsultas
+            // 
+            lsbConsultas.FormattingEnabled = true;
+            lsbConsultas.ItemHeight = 15;
+            lsbConsultas.Location = new Point(46, 47);
+            lsbConsultas.Name = "lsbConsultas";
+            lsbConsultas.Size = new Size(481, 364);
+            lsbConsultas.TabIndex = 1;
+            // 
+            // FormPrincipal
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(lsbConsultas);
+            Controls.Add(btnConsulta);
+            Name = "FormPrincipal";
+            Text = "Form1";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnConsulta;
+        private ListBox lsbConsultas;
     }
 }

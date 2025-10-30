@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GeometriaRestAPIWeb.DTOs;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,18 +9,23 @@ namespace GeometriaRestAPIWeb.Controllers
     [ApiController]
     public class Geometria2Controller : ControllerBase
     {
+        static List<FiguraDTO> lista = new List<FiguraDTO> { new FiguraDTO { Id = 1, Tipo = 1, Area = 3 }, new FiguraDTO { Id = 2, Tipo = 2, Area = 3.3 } };
+
         // GET: api/<Geometria2Controller>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult<List<FiguraDTO>> Get()
         {
-            return new string[] { "value1", "value2" };
+            if (lista.Any() == false) return NotFound("No se encontraron figuras");
+            return Ok(lista);
         }
 
         // GET api/<Geometria2Controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<FiguraDTO> Get(int id)
         {
-            return "value";
+            var figura = (from f in lista where f.Id == id select f).FirstOrDefault();
+            if (lista.Any() == null) return NotFound("Figura no encontrada");
+            return Ok(figura);
         }
 
         // POST api/<Geometria2Controller>

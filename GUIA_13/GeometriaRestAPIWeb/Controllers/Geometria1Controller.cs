@@ -8,7 +8,6 @@ namespace GeometriaRestAPIWeb.Controllers;
 [ApiController]
 public class Geometria1Controller : ControllerBase
 {
-    static List<FiguraDTO> lista = new List<FiguraDTO> { new FiguraDTO { Id = 1, Tipo = 1, Area = 3 }, new FiguraDTO { Id = 2, Tipo = 2, Area = 3.3 } };
     // GET: api/<Geometria1Controller>
     [HttpGet]
     public IEnumerable<string> Get()
