@@ -2,42 +2,69 @@ using GeometriaClientRestAPIDesktop.DTOs;
 using System.Net.Http.Json;
 using System.Windows.Forms;
 
-namespace GeometriaClientRestAPIDesktop
+namespace GeometriaClientRestAPIDesktop;
+public partial class FormPrincipal : Form
 {
-    public partial class FormPrincipal : Form
+    public FormPrincipal()
     {
-        public FormPrincipal()
+        InitializeComponent();
+    }
+
+    async private void btnConsulta_Click(object sender, EventArgs e)
+    {
+        try
         {
-            InitializeComponent();
+            string url = "https://localhost:7198/api/Geometria2";
+
+            using var client = new HttpClient();
+
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(url)
+            };
+
+            var response = await client.SendAsync(request);
+
+            lsbConsultas.Items.Clear();
+            if (response.IsSuccessStatusCode)
+            {
+                var lista = response.Content.ReadFromJsonAsync<List<FiguraDTO>>();
+                lsbConsultas.DataSource = lista.Result;
+            }
         }
-
-        async private void btnConsulta_Click(object sender, EventArgs e)
+        catch (Exception ex)
         {
-            try
+            MessageBox.Show(ex.Message);
+        }
+    }
+
+    async private void button1_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            string url = "https://localhost:7198/api/Geometria2/1";
+
+            using var client = new HttpClient();
+
+            var request = new HttpRequestMessage
             {
-                string url = "https://localhost:7198/api/Geometria2";
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(url)
+            };
 
-                using var client = new HttpClient();
+            var response = await client.SendAsync(request);
 
-                var request = new HttpRequestMessage
-                {
-                    Method = HttpMethod.Get,
-                    RequestUri = new Uri(url)
-                };
-
-                var response = await client.SendAsync(request);
-
-                lsbConsultas.Items.Clear();
-                if (response.IsSuccessStatusCode)
-                {
-                    var lista = response.Content.ReadFromJsonAsync<List<FiguraDTO>>();
-                    lsbConsultas.DataSource = lista.Result;
-                }
-            }
-            catch (Exception ex)
+            lsbConsultas.Items.Clear();
+            if (response.IsSuccessStatusCode)
             {
-                MessageBox.Show(ex.Message);
+                var lista = response.Content.ReadFromJsonAsync<List<FiguraDTO>>();
+                lsbConsultas.DataSource = lista.Result;
             }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
         }
     }
 }

@@ -12,7 +12,6 @@ public class FiguraDTO
     public double? Ancho { get; set; }
     public double? Largo { get; set; }
     public double? Radio { get; set; }
-
     public string Descripcion
     {
         get

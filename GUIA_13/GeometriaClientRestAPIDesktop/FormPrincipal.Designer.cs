@@ -30,11 +30,12 @@
         {
             btnConsulta = new Button();
             lsbConsultas = new ListBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnConsulta
             // 
-            btnConsulta.Location = new Point(588, 207);
+            btnConsulta.Location = new Point(575, 110);
             btnConsulta.Name = "btnConsulta";
             btnConsulta.Size = new Size(180, 59);
             btnConsulta.TabIndex = 0;
@@ -51,11 +52,22 @@
             lsbConsultas.Size = new Size(481, 364);
             lsbConsultas.TabIndex = 1;
             // 
+            // button1
+            // 
+            button1.Location = new Point(591, 207);
+            button1.Name = "button1";
+            button1.Size = new Size(146, 67);
+            button1.TabIndex = 2;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(lsbConsultas);
             Controls.Add(btnConsulta);
             Name = "FormPrincipal";
@@ -67,5 +79,6 @@
 
         private Button btnConsulta;
         private ListBox lsbConsultas;
+        private Button button1;
     }
 }
